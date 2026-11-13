@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111827" />
+  <meta name="description" content="專為 iPhone 設計的離線個人工具箱，包含單位換算、日期、折扣、文字、分貝及密碼工具。" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="我的工具箱" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" type="image/png" href="./icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="./icons/icon-180.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>我的工具箱</title>
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark" aria-hidden="true">▦</div><div class="brand-word">MY TOOLBOX <span>·</span> 個人工具箱</div></div>
+      <button class="icon-button" id="helpButton" title="加入 iPhone 主畫面" aria-label="加入 iPhone 主畫面說明">?</button>
+    </header>
+    <main id="main" tabindex="-1"></main>
+    <nav class="bottom-nav" aria-label="主要導覽">
+      <button data-nav="all" class="nav-item active" aria-current="page"><span class="nav-symbol" aria-hidden="true">▦</span><span>所有工具</span></button>
+      <button data-nav="saved" class="nav-item"><span class="nav-symbol" aria-hidden="true">☆</span><span>我的收藏</span></button>
+      <button data-nav="settings" class="nav-item"><span class="nav-symbol" aria-hidden="true">⚙</span><span>設定</span></button>
+    </nav>
+  </div>
+  <dialog id="helpDialog" class="help-dialog">
+    <div class="dialog-head"><h2>加到 iPhone 主畫面</h2><button class="icon-button close-dialog" aria-label="關閉">×</button></div>
+    <p>使用 iPhone 的 Safari 開啟此網站，點選「分享」，再選擇「加入主畫面」。</p>
+    <p class="muted">首次需連網開啟。離線使用前，請先載入過所有工具。若清除 Safari 網站資料，收藏與設定可能遺失。</p>
+    <button id="dialogDone" class="primary-button full">知道了</button>
+  </dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
